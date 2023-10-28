@@ -89,7 +89,7 @@ ScreenManager:
            
 
         Button:
-            id: experience_button,
+            id: experience_button
             text: 'Trainingserfahrung'
             pos_hint: {'center_x': 0.5, 'center_y': 0.3}
             on_release: app.duration_dropdown.open(self)
@@ -236,25 +236,16 @@ class MainApp(MDApp):
     def build(self):
         self.root = Builder.load_string(KV)
         self.setup_db()
+        self.initialize_dropdowns()
+        return self.root
+
+
+    def initialize_dropdowns(self): 
         self.goals_dropdown = self.create_dropdown(['Fitness/Hobbysport', 'Wettkampforientiert', 'Spezifische Ziele'], 'goals_button')
-        
-
-        # Dropdown Menü für Trainingshäufigkeit
         self.frequency_dropdown = self.create_dropdown(['Täglich', 'Wöchentlich', 'Monatlich'], 'frequency_button')
-        
-
-        # Dropdown Menü für Trainingsdauer
         self.duration_dropdown = self.create_dropdown(['< 1 Stunde', '1-2 Stunden', '2+ Stunden'], 'duration_button')
-        
-
-        # Dropdown Menü für Trainingserfahrung
         self.experience_dropdown = self.create_dropdown(['Anfänger', 'Fortgeschritten', 'Profi'], 'experience_button')
-        
-
-        # Dropdown Menü für Sportart
         self.sport_dropdown = self.create_dropdown(['Laufen', 'Schwimmen', 'Fahrradfahren'], 'sport_button')
-        
-
 
         self.root.ids.goals_button.text = 'Trainingsziele auswählen'
         self.root.ids.frequency_button.text = 'Trainingshäufigkeit auswählen'
@@ -262,7 +253,6 @@ class MainApp(MDApp):
         self.root.ids.experience_button.text = 'Trainingserfahrung auswählen'
         self.root.ids.sport_button.text = 'Sportart auswählen'
 
-        return self.root
     
 
     def create_dropdown(self, options, button_id):
