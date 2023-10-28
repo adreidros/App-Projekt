@@ -84,34 +84,39 @@ ScreenManager:
         Button:
             id: sport_button
             hint_text: 'Sportart'
-            pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+            size_hint: (0.5, 0.1)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.7}
             on_release: app.sport_dropdown.open(self)
            
 
         Button:
             id: experience_button
             text: 'Trainingserfahrung'
-            pos_hint: {'center_x': 0.5, 'center_y': 0.3}
-            on_release: app.duration_dropdown.open(self)
+            size_hint: (0.5, 0.1)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+            on_release: app.experience_dropdown.open(self)
 
             
         Button:
             id: goals_button
             text: 'Trainingsziele'
-            pos_hint: {'center_x': 0.5, 'center_y': 0.25}
-            on_release: app.dropdown.open(self)
+            size_hint: (0.5, 0.1)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            on_release: app.goals_dropdown.open(self)
            
 
         Button:
             id: duration_button
             text: 'Trainingsdauer'
+            size_hint: (0.5, 0.1)
             pos_hint: {'center_x': 0.5, 'center_y': 0.4}
-        
+            on_release: app.duration_dropdown.open(self)
 
         Button:
             id: frequency_button
             hint_text: 'Trainingshäufigkeit'
-            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            size_hint: (0.5, 0.1)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.3}
             on_release: app.frequency_dropdown.open(self)
 
         MDRaisedButton:
