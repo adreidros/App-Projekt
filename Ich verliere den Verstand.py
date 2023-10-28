@@ -354,17 +354,17 @@ class MainApp(MDApp):
 
     def on_profile_complete(self, instance):
         username = self.root.ids.username_field.text
-        sport = self.root.ids.sport_field.text
-        frequency = self.root.ids.frequency_field.text
-        duration = self.root.ids.duration_field.text
-        experience = self.root.ids.experience_field.text
-        goals = self.root.ids.goals_field.text
+        sport = self.root.ids.sport_button.text
+        frequency = self.root.ids.frequency_button.text
+        duration = self.root.ids.duration_button.text
+        experience = self.root.ids.experience_button.text
+        goals = self.root.ids.goals_button.text
 
 
         conn = sqlite3.connect('user_data.db')
         c = conn.cursor()
 
-        c.execute('UPDATE users SET sport = ?, training_frequency = ?, training_duration = ?, training_experience = ?, training_goals = ? WHERE username = ?', 
+        c.execute('UPDATE users SET sport = ?, frequency = ?, duration = ?, experience = ?, goals = ? WHERE username = ?', 
                   (sport, frequency, duration, experience, goals, username))
 
         conn.commit()
