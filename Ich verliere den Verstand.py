@@ -290,12 +290,10 @@ class MainApp(MDApp):
                 username TEXT PRIMARY KEY,
                 password TEXT,
                 sport TEXT,
-                training_frequency TEXT,
-                training_availability TEXT,
-                training_duration TEXT,
-                training_location TEXT,
-                training_experience TEXT,
-                training_goals TEXT
+                frequency TEXT,
+                duration TEXT,
+                xperience TEXT,
+                goals TEXT
                 
             )
         ''')
