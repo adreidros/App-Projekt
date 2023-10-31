@@ -292,7 +292,7 @@ class MainApp(MDApp):
                 sport TEXT,
                 frequency TEXT,
                 duration TEXT,
-                xperience TEXT,
+                experience TEXT,
                 goals TEXT
                 
             )
